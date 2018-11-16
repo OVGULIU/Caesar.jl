@@ -5,24 +5,6 @@ import Unmarshal: unmarshal
 import Base: convert
 
 """
-Converter: Prior -> PackedPrior::Dict{String, Any}
-"""
-function convert(::Type{Dict{String, Any}}, prior::IncrementalInference.Prior)
-    z = convert(Type{Dict{String, Any}}, prior.Z)
-    return Packed_Factor([z], "Prior")
-end
-
-"""
-Converter: PackedPrior::Dict{String, Any} -> Prior
-"""
-function convert(::Type{Prior}, prior::Dict{String, Any})
-    # Genericize to any packed type next.
-    z = prior["measurement"][1]
-    z = convert(_evalType(z["distType"]), z)
-    return Prior(z)
-end
-
-"""
 Converter: PackedPrior::Dict{String, Any} -> PriorPose2
 """
 function convert(::Type{PriorPose2}, prior::Dict{String, Any})
