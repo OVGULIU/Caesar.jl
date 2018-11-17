@@ -1,45 +1,46 @@
-FactorType,Name,ParentType,HasTestConstructor,CanSample,CanCallResidual,CanProtoPack,CanProtoUnpack,CanJsonPack,CanJsonUnpack,JsonE2EWorks,Docs
-DynPoint2DynPoint2,DynPoint2DynPoint2,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-DynPoint2VelocityPrior,DynPoint2VelocityPrior,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-DynPose2Pose2,DynPose2Pose2,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-DynPose2VelocityPrior,DynPose2VelocityPrior,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-FunctorPairwiseNH,FunctorPairwiseNH,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-FunctorSingletonNH,FunctorSingletonNH,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-GenericMarginal,GenericMarginal,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-IncrementalInference.Odo,IncrementalInference.Odo,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-InertialPose3,InertialPose3,FunctorPairwise,false,false,false,false,false,false,false,false,"```
+FactorType,Name,ParentType,HasTestConstructor,CanSample,CanCallResidual,CanProtoPack,CanProtoUnpack,ProtoE2EWorks,CanJsonPack,CanJsonUnpack,JsonE2EWorks,Docs
+DynPoint2DynPoint2,DynPoint2DynPoint2,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+DynPoint2VelocityPrior,DynPoint2VelocityPrior,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+DynPose2Pose2,DynPose2Pose2,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+DynPose2VelocityPrior,DynPose2VelocityPrior,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+FunctorPairwiseNH,FunctorPairwiseNH,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+FunctorSingletonNH,FunctorSingletonNH,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+GenericMarginal,GenericMarginal,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+IncrementalInference.Odo,IncrementalInference.Odo,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+InertialPose3,InertialPose3,FunctorPairwise,false,false,false,false,false,false,false,false,false,"```
 InertialPose3(zij::Distributions.MvNormal, pioc::InertialPose3Container, pido::PreintegralCompensationGradients)
 ```
 
 Zij is entropy of veeLie15, pioc is preintegral measurements, pido is compensation gradients.
 "
-LinearConditional,LinearConditional,FunctorPairwise,true,false,false,false,false,false,false,false,No Documentation
-LinearRangeBearingElevation,LinearRangeBearingElevation,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-MixtureLinearConditional,MixtureLinearConditional,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-MixturePrior,MixturePrior,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-MultipleFeatures2D,MultipleFeatures2D,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-PartialPose3XYYaw,PartialPose3XYYaw,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-PartialPriorRollPitchZ,PartialPriorRollPitchZ,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-PartialPriorYawPose2,PartialPriorYawPose2,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-Point2Point2,Point2Point2,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Point2Point2Range,Point2Point2Range,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-Point2Point2Velocity,Point2Point2Velocity,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-Point2Point2WorldBearing,Point2Point2WorldBearing,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Pose2Point2Bearing,Pose2Point2Bearing,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-Pose2Point2BearingRange,Pose2Point2BearingRange,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Pose2Point2BearingRangeMH,Pose2Point2BearingRangeMH,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Pose2Point2Range,Pose2Point2Range,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Pose2Pose2,Pose2Pose2,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Pose3Pose3,Pose3Pose3,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-Prior,Prior,FunctorSingleton,true,true,false,false,false,true,true,true,"Unary factor representing a prior absolute measurement.
+LinearConditional,LinearConditional,FunctorPairwise,true,false,false,false,false,false,false,false,false,No Documentation
+LinearRangeBearingElevation,LinearRangeBearingElevation,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+MixtureLinearConditional,MixtureLinearConditional,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+MixturePrior,MixturePrior,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+MultipleFeatures2D,MultipleFeatures2D,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+PartialPose3XYYaw,PartialPose3XYYaw,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+PartialPriorRollPitchZ,PartialPriorRollPitchZ,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+PartialPriorYawPose2,PartialPriorYawPose2,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+Point2Point2,Point2Point2,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Point2Point2Range,Point2Point2Range,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+Point2Point2Velocity,Point2Point2Velocity,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+Point2Point2WorldBearing,Point2Point2WorldBearing,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Pose2Point2Bearing,Pose2Point2Bearing,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+Pose2Point2BearingRange,Pose2Point2BearingRange,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Pose2Point2BearingRangeMH,Pose2Point2BearingRangeMH,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Pose2Point2Range,Pose2Point2Range,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Pose2Pose2,Pose2Pose2,FunctorPairwise,true,true,false,true,true,true,false,false,false,"A 2D measurement factor (x,y,	heta) describing relationship between two Pose2s.
 "
-PriorInertialPose3,PriorInertialPose3,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-PriorPoint2,PriorPoint2,FunctorSingleton,false,false,false,false,false,false,false,false,No Documentation
-PriorPose2,PriorPose2,FunctorSingleton,false,false,false,false,false,false,false,false,"A 2D Prior.
+Pose3Pose3,Pose3Pose3,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+Prior,Prior,FunctorSingleton,true,true,false,true,true,true,true,true,true,"Unary factor representing a prior absolute measurement.
 "
-PriorPose3,PriorPose3,FunctorSingleton,true,true,false,false,false,false,false,false,"A prior for a Pose3 variable.
+PriorInertialPose3,PriorInertialPose3,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+PriorPoint2,PriorPoint2,FunctorSingleton,false,false,false,false,false,false,false,false,false,No Documentation
+PriorPose2,PriorPose2,FunctorSingleton,false,false,false,false,false,false,false,false,false,"A 2D Prior.
 "
-Ranged,Ranged,FunctorPairwise,false,false,false,false,false,false,false,false,No Documentation
-SASBearing2D,SASBearing2D,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-VelPoint2VelPoint2,VelPoint2VelPoint2,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
-VelPose2VelPose2,VelPose2VelPose2,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,No Documentation
+PriorPose3,PriorPose3,FunctorSingleton,true,true,false,true,true,true,false,false,false,"A prior for a Pose3 variable.
+"
+Ranged,Ranged,FunctorPairwise,false,false,false,false,false,false,false,false,false,No Documentation
+SASBearing2D,SASBearing2D,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+VelPoint2VelPoint2,VelPoint2VelPoint2,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation
+VelPose2VelPose2,VelPose2VelPose2,FunctorPairwiseMinimize,false,false,false,false,false,false,false,false,false,No Documentation

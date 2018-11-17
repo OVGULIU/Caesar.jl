@@ -136,7 +136,11 @@ export
   wrapRad,
   phaseShiftSingle!,
   liebf!,
-  SASDebug
+  SASDebug,
+
+  # Factor compatibility tools
+  factorCompatibilityCheck,
+  checkCurrentFactors
 
 
 
@@ -151,7 +155,6 @@ include("UserFunctions.jl")
 # Configuration
 include("config/CaesarConfig.jl")
 
-
 # using CloudGraphs
 include("cloudgraphs/SolverStatus.jl")
 include("cloudgraphs/IterationStatistics.jl")
@@ -161,6 +164,8 @@ include("cloudgraphs/slamindb.jl")
 include("cloudgraphs/MultisessionUtils.jl")
 include("cloudgraphs/FoveationUtils.jl")
 
+# Factor compatibility tools
+include("FactorCompatibilityTools.jl")
 
 # ZMQ server and endpoints
 include("zmq/ZmqCaesar.jl")

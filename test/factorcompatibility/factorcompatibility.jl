@@ -25,6 +25,7 @@ dfFactors[:CanSample] = false
 dfFactors[:CanCallResidual] = false
 dfFactors[:CanProtoPack] = false
 dfFactors[:CanProtoUnpack] = false
+dfFactors[:ProtoE2EWorks] = false
 dfFactors[:CanJsonPack] = false
 dfFactors[:CanJsonUnpack] = false
 dfFactors[:JsonE2EWorks] = false
@@ -51,7 +52,7 @@ for i = 1:length(factors)
 
         # 4. Can we call residual?
         if isa(testFactor, FunctorPairwise) || isa(testFactor, FunctorPairwiseMinimize)
-            #TODO
+            #TODO - Dehann can you help here?
         end
         # 4b. Can we profile speed of residual function?
 
@@ -68,12 +69,28 @@ for i = 1:length(factors)
         catch ex
             @warn "Error when processing $(factors[i]) - $ex"
         end
+
+        # 6. Can we find a packed type?
+        try
+            @show str = "Packed$(factors[i])"
+            packedType = eval(Meta.parse(str))
+
+            @show packed = convert(packedType, testFactor)
+            dfFactors[:CanProtoPack][i] = true
+            @show back = convert(factors[i], packed)
+            dfFactors[:CanProtoUnpack][i] = true
+            reback = convert(packedType, back)
+            dfFactors[:ProtoE2EWorks][i] = JSON.json(packed) == JSON.json(reback)
+        catch ex
+            io = IOBuffer()
+            showerror(io, ex, catch_backtrace())
+            err = String(take!(io))
+            @warn "Error when Proto packing/unpacking $(factors[i]) - $err"
+        end
+
     catch ex
         @warn "Error when processing $(factors[i]) - $ex"
     end
-
-    # 6. Can we pack and unpack a proto?
-    #TODO
 end
 
-CSV.write(joinpath(Pkg.dir("Caesar"), "test", "factorcompatibility", "FactorCompatibility.csv"), dfFactors)
+CSV.write(joinpath(dirname(pathof(Caesar)), "..","test", "factorcompatibility", "FactorCompatibility.csv"), dfFactors)
